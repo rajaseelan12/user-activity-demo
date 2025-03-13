@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Activity Tracker</title>
+    <script>
+        let inactiveTimer;
+
+        function resetTimer() {
+            clearTimeout(inactiveTimer);
+            document.getElementById("status").innerText = "User is Active";
+            
+            inactiveTimer = setTimeout(() => {
+                document.getElementById("status").innerText = "User is Inactive";
+                console.log("User is inactive");
+            }, 5000); // 5 seconds inactivity
+        }
+
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keypress", resetTimer);
+        document.addEventListener("click", resetTimer);
+        document.addEventListener("scroll", resetTimer);
+
+        resetTimer(); // Start the timer initially
+    </script>
+</head>
+<body>
+    <h1>User Activity Tracker Demo</h1>
+    <p>Status: <span id="status">User is Active</span></p>
+</body>
+</html>
