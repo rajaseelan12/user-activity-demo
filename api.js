@@ -1,4 +1,4 @@
-const API_URL = "https://your-deployed-backend-url/upload";
+const API_URL = "https://media.smsgupshup.com/GatewayAPI/rest";
 
 async function uploadMedia() {
     const formData = new FormData();
